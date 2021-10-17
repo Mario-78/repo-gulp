@@ -6,7 +6,7 @@ const babel = require('gulp-babel')
 const { pipe } = require('stdout-stream')
 const { createExportDefault } = require('typescript')
 
-function padrao(callback) {
+function transformacaoJS(callback) {
     gulp.src('src/**/*.js')
         .pipe(babel({
             comments: false,
@@ -32,4 +32,4 @@ function fim(callback) {
     return callback()
 }
 
-exports.default = series(padrao, fim)
+exports.default = series(transformacaoJS, fim)
